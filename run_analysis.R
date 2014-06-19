@@ -19,6 +19,8 @@ read_dataset <- function(directory) {
 
 data <- rbind(read_dataset('test'), read_dataset('train'))
 colnames(data) <- c('subject', features[,2], 'activity')
-
+rm('features', 'labels')
 
 # 2. Extract mean and sd measurements only ####
+data <- data[,grep('(mean|std)\\(\\)', colnames(data))]
+
