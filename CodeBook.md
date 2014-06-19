@@ -34,13 +34,7 @@ These signals were used to estimate variables of the feature vector for each pat
 - fBodyGyroMag
 - fBodyGyroJerkMag
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-- gravityMean
-- tBodyAccMean
-- tBodyAccJerkMean
-- tBodyGyroMean
-- tBodyGyroJerkMean
+The '-'s have been replaced with '_'s to avoid errors when selecting columns by name.
 
 <code>subject</code> is the ID of the observed individual
 
@@ -57,3 +51,8 @@ More detailed information at:
 - http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 
+<h1>Table: variable_averages</h1>
+
+Each row in this <code>data.frame</code> represents a subject and an activity (shown by the <code>subject</code> and <code>activity</code> columns). Each of other columns represents the average of all the values of that column in all observations of that subject performing the specified activity (from the original <code>data</code> dataset).
+
+This dataset was created from the <code>data</code> dataset using the <code>ddplyr</code> package to group and summarise the data.
